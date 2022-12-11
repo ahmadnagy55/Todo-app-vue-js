@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="./public/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo App Vue</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="./src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./public/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="importmap">
+          {
+            "imports": {
+              "@vaadin/router": "/web_modules/@vaadin/router.js",
+              "lit-element": "/web_modules/lit-element.js"
+            }
+          }
+          if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').then(() => {
+        console.log('ServiceWorker registered!');
+      }, (err) => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+        </script>
+  <title>Todo App Vue</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
 </html>
