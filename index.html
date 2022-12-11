@@ -6,20 +6,10 @@
   <link rel="icon" href="./public/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="importmap">
-          {
-            "imports": {
-              "@vaadin/router": "/web_modules/@vaadin/router.js",
-              "lit-element": "/web_modules/lit-element.js"
-            }
-          }
-          if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js').then(() => {
-        console.log('ServiceWorker registered!');
-      }, (err) => {
-        console.log('ServiceWorker registration failed: ', err);
-      });
-    });
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
   }
         </script>
   <title>Todo App Vue</title>
